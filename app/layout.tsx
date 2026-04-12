@@ -13,17 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Steel Motion - AI Chief of Staff for Your Business",
+  title: "CommandPost - AI Chief of Staff for Your Business",
   description: "A managed AI employee that runs on your own server, manages your tasks, processes your meetings, and sends you a briefing every morning. Veteran-owned. Security-first.",
   openGraph: {
-    title: "Steel Motion - AI Chief of Staff",
-    description: "Your AI Chief of Staff. Working 24/7. Managed AI employees for businesses.",
+    title: "CommandPost - AI Chief of Staff",
+    description: "Your AI Chief of Staff. Working 24/7. Mission Control dashboard included.",
     type: "website",
-    url: "https://steelmotionllc.ai",
+    url: "https://aicommandpost.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Steel Motion - AI Chief of Staff",
+    title: "CommandPost - AI Chief of Staff",
     description: "Your AI Chief of Staff. Working 24/7.",
   },
 };

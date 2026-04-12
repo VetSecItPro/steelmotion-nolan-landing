@@ -4,8 +4,8 @@ export default function Home() {
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#FF3B30] rounded-lg flex items-center justify-center font-bold text-sm">SM</div>
-          <span className="font-semibold text-lg">Steel Motion</span>
+          <div className="w-8 h-8 bg-[#FF3B30] rounded-lg flex items-center justify-center font-bold text-sm">CP</div>
+          <span className="font-semibold text-lg">CommandPost</span>
         </div>
         <div className="flex items-center gap-6 text-sm text-gray-400">
           <a href="#features" className="hover:text-white transition">Features</a>
@@ -159,7 +159,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-gray-800 py-8 px-6">
         <div className="max-w-6xl mx-auto flex items-center justify-between text-sm text-gray-500">
-          <p>Steel Motion LLC - Veteran-owned. Dallas, TX.</p>
+          <p>CommandPost by Steel Motion LLC - Veteran-owned. Dallas, TX.</p>
           <p>All rights reserved.</p>
         </div>
       </footer>

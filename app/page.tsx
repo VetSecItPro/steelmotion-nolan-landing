@@ -1,168 +1,372 @@
+import Link from "next/link";
+import CTA from "./components/CTA";
+
+const features = [
+  {
+    label: "01",
+    title: "Morning briefings, not morning scrambles",
+    description:
+      "Every day at 7 AM, your AI Chief of Staff sends a structured briefing: today's calendar, priority tasks, stale contacts, open commitments, and vault insights. By the time you sit down, the context is already loaded.",
+    detail: "Evening reviews and weekly summaries included.",
+  },
+  {
+    label: "02",
+    title: "Institutional memory that compounds",
+    description:
+      "Every meeting insight, research finding, decision, and contact interaction is automatically organized in a second-brain vault. Cross-referenced. Searchable. After three months, your CoS genuinely knows your business.",
+    detail: "PARA + Zettelkasten hybrid knowledge architecture.",
+  },
+  {
+    label: "03",
+    title: "Meeting continuity without the prep work",
+    description:
+      "Before every meeting: attendee context, last discussions, open commitments. After: action items extracted and tracked. You walk in prepared and walk out with nothing falling through the cracks.",
+    detail: "Integrates with Google Calendar and Granola transcripts.",
+  },
+  {
+    label: "04",
+    title: "Decisions tracked, outcomes measured",
+    description:
+      "Every business decision recorded with context, alternatives considered, and rationale. 90 days later, your CoS prompts you to review what actually happened. Build a track record of your judgment.",
+    detail: "Decision accuracy analytics by type and confidence.",
+  },
+];
+
+const securityPoints = [
+  {
+    number: "01",
+    title: "Your server, your data",
+    text: "Every customer gets their own isolated container stack. Your data never touches our systems or any LLM provider for storage.",
+  },
+  {
+    number: "02",
+    title: "Encrypted everything",
+    text: "AES-256 encrypted backups. TLS in transit. Secrets management with 600-permission env files. Enterprise-grade from day one.",
+  },
+  {
+    number: "03",
+    title: "Zero public exposure",
+    text: "Your dashboard sits behind Cloudflare Zero Trust with SSO. No login page on the public internet. Period.",
+  },
+  {
+    number: "04",
+    title: "Built by a cybersecurity veteran",
+    text: "CISSP certified. 20 years protecting systems. This product reflects that experience in every architectural decision.",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0C0C0C] text-white">
-      {/* Nav */}
-      <nav className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#FF3B30] rounded-lg flex items-center justify-center font-bold text-sm">CP</div>
-          <span className="font-semibold text-lg">CommandPost</span>
-        </div>
-        <div className="flex items-center gap-6 text-sm text-gray-400">
-          <a href="#features" className="hover:text-white transition">Features</a>
-          <a href="#pricing" className="hover:text-white transition">Pricing</a>
-          <a href="#contact" className="hover:text-white transition">Contact</a>
-        </div>
-      </nav>
-
-      {/* Hero */}
-      <section className="max-w-4xl mx-auto px-6 pt-24 pb-16 text-center">
-        <div className="inline-block px-3 py-1 rounded-full border border-gray-700 text-xs text-gray-400 mb-6">
-          Veteran-Owned &middot; Security-First &middot; AI-Powered
-        </div>
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-          Your AI Chief of Staff.
-          <br />
-          <span className="text-[#FF3B30]">Working 24/7.</span>
-        </h1>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          A managed AI employee that runs on your own server, manages your tasks,
-          processes your meetings, and sends you a briefing every morning -
-          before you have had your coffee.
-        </p>
-        <div className="flex items-center justify-center gap-4">
-          <a
-            href="#contact"
-            className="px-6 py-3 bg-[#FF3B30] text-white font-semibold rounded-lg hover:bg-[#E0352B] transition text-sm"
-          >
-            Request Early Access
-          </a>
-          <a
-            href="#features"
-            className="px-6 py-3 border border-gray-700 text-gray-300 font-semibold rounded-lg hover:border-gray-500 hover:text-white transition text-sm"
-          >
-            See How It Works
-          </a>
-        </div>
-      </section>
-
-      {/* Social proof */}
-      <section className="max-w-4xl mx-auto px-6 py-8 text-center">
-        <p className="text-sm text-gray-500">
-          Built by a cybersecurity veteran. Enterprise-grade security. Your data never leaves your server.
-        </p>
-      </section>
-
-      {/* Features */}
-      <section id="features" className="max-w-6xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-center mb-4">What Your AI Chief of Staff Does</h2>
-        <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-          Not a chatbot. An actual digital employee that works in the background,
-          anticipates your needs, and keeps your business running.
-        </p>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { title: "Morning Briefings", desc: "Every morning at 7 AM, your CoS sends a briefing via Telegram with today's calendar, priority tasks, stale contacts, and vault insights.", icon: "sun" },
-            { title: "Knowledge Management", desc: "Every piece of research, every meeting insight, every decision - automatically organized, cross-referenced, and searchable.", icon: "brain" },
-            { title: "Meeting Continuity", desc: "Before every meeting: attendee context, last discussions, open commitments. After: action items extracted and tracked.", icon: "handshake" },
-            { title: "Task Intelligence", desc: "Kanban board with dependencies, sprints, and a validation pipeline. Your CoS reviews content before you approve it.", icon: "check" },
-            { title: "Decision Journal", desc: "Every business decision recorded with context, alternatives, and rationale. 90 days later, review what actually happened.", icon: "chart" },
-            { title: "Business Pulse", desc: "Weekly 0-100 health score from task velocity, goal progress, contact engagement, and content output. Trend over months.", icon: "trending" },
-          ].map((f) => (
-            <div key={f.title} className="p-6 rounded-xl border border-gray-800 bg-[#1A1A1A] hover:border-gray-700 transition">
-              <div className="w-10 h-10 rounded-lg bg-[#FF3B30]/10 flex items-center justify-center mb-4">
-                <div className="w-5 h-5 rounded-full bg-[#FF3B30]/30" />
+    <div className="bg-background">
+      {/* Hero - asymmetric split */}
+      <section className="pt-28 pb-20 lg:pt-36 lg:pb-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: text */}
+            <div className="fade-up">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-surface-1 text-xs text-muted mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                Veteran-owned. Security-first.
               </div>
-              <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
-      {/* Security */}
-      <section className="max-w-4xl mx-auto px-6 py-16">
-        <div className="p-8 rounded-xl border border-gray-800 bg-[#1A1A1A]">
-          <h2 className="text-2xl font-bold mb-6 text-center">Security-First. Not an Afterthought.</h2>
-          <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-400">
-            <div className="flex gap-3">
-              <span className="text-[#FF3B30] font-bold shrink-0">01</span>
-              <p><strong className="text-white">Your server, your data.</strong> Every customer gets their own isolated container. Your data never touches our systems or any LLM provider for storage.</p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
+                Your AI Chief of Staff.
+                <br />
+                <span className="text-accent">Working 24/7.</span>
+              </h1>
+
+              <p className="text-lg text-muted leading-relaxed max-w-lg mb-10">
+                A managed AI employee on your own server. It runs your tasks,
+                processes your meetings, builds your knowledge base, and briefs
+                you every morning.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/pricing"
+                  className="inline-flex items-center justify-center px-7 py-3.5 bg-accent text-white font-medium rounded-lg hover:bg-accent-hover transition-colors duration-200 glow-accent"
+                >
+                  Request early access
+                </Link>
+                <Link
+                  href="/features"
+                  className="inline-flex items-center justify-center px-7 py-3.5 border border-border text-muted font-medium rounded-lg hover:border-border-hover hover:text-foreground transition-colors duration-200"
+                >
+                  Watch demo
+                </Link>
+              </div>
             </div>
-            <div className="flex gap-3">
-              <span className="text-[#FF3B30] font-bold shrink-0">02</span>
-              <p><strong className="text-white">Encrypted everything.</strong> Disk encryption, TLS in transit, encrypted backups, secrets management. Enterprise-grade from day one.</p>
-            </div>
-            <div className="flex gap-3">
-              <span className="text-[#FF3B30] font-bold shrink-0">03</span>
-              <p><strong className="text-white">Zero public exposure.</strong> Your dashboard is behind Cloudflare Access with SSO. No login page on the public internet.</p>
-            </div>
-            <div className="flex gap-3">
-              <span className="text-[#FF3B30] font-bold shrink-0">04</span>
-              <p><strong className="text-white">Cybersecurity veteran.</strong> Built by someone who spent years protecting systems, not someone who learned security from a YouTube tutorial.</p>
+
+            {/* Right: gradient orb / dashboard mockup */}
+            <div className="relative flex items-center justify-center fade-up fade-up-delay-2">
+              <div className="relative w-full aspect-square max-w-md">
+                {/* Outer glow */}
+                <div className="absolute inset-0 bg-accent/8 rounded-full blur-3xl orb-animate" />
+                {/* Inner orb */}
+                <div className="absolute inset-8 rounded-full bg-gradient-to-br from-accent/20 via-surface-2 to-surface-1 border border-border orb-animate" style={{ animationDelay: "-3s" }} />
+                {/* Dashboard mockup overlay */}
+                <div className="absolute inset-16 rounded-2xl bg-surface-1 border border-border overflow-hidden">
+                  <div className="p-4 border-b border-border">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-2.5 h-2.5 rounded-full bg-accent/60" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-surface-3" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-surface-3" />
+                    </div>
+                    <div className="h-2 w-24 bg-surface-3 rounded mb-2" />
+                    <div className="h-1.5 w-36 bg-surface-2 rounded" />
+                  </div>
+                  <div className="p-4 space-y-3">
+                    <div className="h-8 bg-surface-2 rounded-lg" />
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="h-12 bg-surface-2 rounded-lg" />
+                      <div className="h-12 bg-surface-2 rounded-lg" />
+                    </div>
+                    <div className="h-6 bg-accent/10 rounded-lg" />
+                    <div className="h-8 bg-surface-2 rounded-lg" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section id="pricing" className="max-w-6xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-center mb-4">Simple Pricing</h2>
-        <p className="text-gray-400 text-center mb-12">No hidden fees. No per-token charges. One monthly price.</p>
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {[
-            {
-              tier: "Setup", price: "$2K - $5K", period: "one-time",
-              desc: "We set up your AI Chief of Staff on your own server.",
-              features: ["Dedicated hardened VPS", "Custom personality and business context", "1-2 messaging channels", "3-5 skills installed", "2 hours training", "30-day support"],
-            },
-            {
-              tier: "Managed", price: "$1.5K - $3K", period: "/month",
-              desc: "Ongoing management with full second brain.",
-              features: ["Everything in Setup", "Morning and evening briefings", "Memory maintenance and optimization", "Custom skill development", "Priority same-day support", "Model costs included"],
-              highlight: true,
-            },
-            {
-              tier: "Workforce", price: "$5K - $15K", period: "/month",
-              desc: "Multiple AI agents with team access.",
-              features: ["Everything in Managed", "Multi-user access (RBAC)", "Multiple specialized agents", "Custom integrations", "Weekly strategy calls", "SLA with uptime guarantee"],
-            },
-          ].map((p) => (
-            <div key={p.tier} className={`p-6 rounded-xl border ${p.highlight ? "border-[#FF3B30] ring-1 ring-[#FF3B30]/20" : "border-gray-800"} bg-[#1A1A1A]`}>
-              {p.highlight && <div className="text-xs font-semibold text-[#FF3B30] mb-2">MOST POPULAR</div>}
-              <h3 className="text-xl font-bold mb-1">{p.tier}</h3>
-              <div className="text-2xl font-bold mb-1">{p.price}<span className="text-sm text-gray-500 font-normal"> {p.period}</span></div>
-              <p className="text-gray-400 text-sm mb-6">{p.desc}</p>
-              <ul className="space-y-2 text-sm text-gray-300">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2"><span className="text-[#FF3B30] mt-0.5">-</span>{f}</li>
-                ))}
+      {/* Social proof strip */}
+      <section className="py-6 border-y border-border/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="text-sm text-muted text-center tracking-wide">
+            Built by a CISSP veteran with 20+ years in cybersecurity and an MBA.
+            Your data never leaves your server.
+          </p>
+        </div>
+      </section>
+
+      {/* Features - zig-zag layout */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-2xl mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              Not a chatbot. A digital employee.
+            </h2>
+            <p className="text-muted text-lg leading-relaxed">
+              It works in the background while you focus on what matters.
+              Anticipates needs, tracks commitments, builds institutional
+              knowledge.
+            </p>
+          </div>
+
+          <div className="space-y-20 lg:space-y-28">
+            {features.map((feature, i) => (
+              <div
+                key={feature.label}
+                className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
+                  i % 2 === 1 ? "lg:direction-rtl" : ""
+                }`}
+              >
+                <div className={i % 2 === 1 ? "lg:order-2" : ""}>
+                  <span className="text-xs font-mono text-accent tracking-wider">
+                    {feature.label}
+                  </span>
+                  <h3 className="text-2xl font-bold tracking-tight mt-2 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted leading-relaxed mb-3">
+                    {feature.description}
+                  </p>
+                  <p className="text-sm text-muted/70">{feature.detail}</p>
+                </div>
+                <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+                  <div className="aspect-[4/3] rounded-2xl bg-surface-1 border border-border overflow-hidden">
+                    <div className="h-full w-full bg-gradient-to-br from-surface-2 via-surface-1 to-accent/5 flex items-center justify-center">
+                      <span className="text-6xl font-bold text-accent/10">
+                        {feature.label}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <Link
+              href="/features"
+              className="text-sm text-accent hover:text-accent-hover transition-colors duration-200 font-medium"
+            >
+              See all features &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Security section */}
+      <section className="py-24 lg:py-32 bg-surface-1/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            <div>
+              <span className="text-xs font-mono text-accent tracking-wider uppercase">
+                Security
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-2 mb-4">
+                Security-first. Not an afterthought.
+              </h2>
+              <p className="text-muted text-lg leading-relaxed mb-6">
+                Built by someone who spent 20 years protecting systems. Every
+                layer of this product reflects that discipline.
+              </p>
+              <Link
+                href="/security"
+                className="text-sm text-accent hover:text-accent-hover transition-colors duration-200 font-medium"
+              >
+                Full security architecture &rarr;
+              </Link>
+            </div>
+
+            <div className="space-y-6">
+              {securityPoints.map((point) => (
+                <div key={point.number} className="flex gap-4">
+                  <span className="text-accent font-mono text-sm font-bold shrink-0 mt-0.5">
+                    {point.number}
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">
+                      {point.title}
+                    </h4>
+                    <p className="text-sm text-muted leading-relaxed">
+                      {point.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing preview */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              Transparent pricing
+            </h2>
+            <p className="text-muted text-lg">
+              No hidden fees. No per-token charges. Infrastructure and LLM costs
+              included.
+            </p>
+          </div>
+
+          {/* Horizontal pricing cards */}
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Setup */}
+            <div className="rounded-2xl border border-border bg-surface-1 p-8 card-lift">
+              <h3 className="text-lg font-bold mb-1">Setup</h3>
+              <div className="text-2xl font-bold mb-1">
+                $3,000
+                <span className="text-sm text-muted font-normal ml-1">
+                  one-time
+                </span>
+              </div>
+              <p className="text-sm text-muted mb-6">
+                Your AI Chief of Staff, deployed and configured on your own
+                server.
+              </p>
+              <ul className="space-y-2.5 text-sm text-muted">
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-px">-</span>
+                  Dedicated hardened VPS
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-px">-</span>
+                  Custom personality and business context
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-px">-</span>
+                  2 hours training + 30-day support
+                </li>
               </ul>
             </div>
-          ))}
+
+            {/* Managed - highlighted */}
+            <div className="rounded-2xl border border-accent/40 bg-surface-1 p-8 relative card-lift glow-accent">
+              <span className="absolute -top-3 left-8 px-3 py-0.5 bg-accent text-white text-xs font-medium rounded-full">
+                Recommended
+              </span>
+              <h3 className="text-lg font-bold mb-1">Managed</h3>
+              <div className="text-2xl font-bold mb-1">
+                $2,000
+                <span className="text-sm text-muted font-normal ml-1">
+                  /month
+                </span>
+              </div>
+              <p className="text-sm text-muted mb-6">
+                Ongoing management with daily briefings, memory optimization,
+                and custom skills.
+              </p>
+              <ul className="space-y-2.5 text-sm text-muted">
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-px">-</span>
+                  Everything in Setup
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-px">-</span>
+                  Morning and evening briefings
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-px">-</span>
+                  LLM costs included
+                </li>
+              </ul>
+            </div>
+
+            {/* Workforce */}
+            <div className="rounded-2xl border border-border bg-surface-1 p-8 card-lift">
+              <h3 className="text-lg font-bold mb-1">Workforce</h3>
+              <div className="text-2xl font-bold mb-1">
+                $5,000
+                <span className="text-sm text-muted font-normal ml-1">
+                  /month
+                </span>
+              </div>
+              <p className="text-sm text-muted mb-6">
+                Multiple AI agents with team access, custom integrations, and
+                SLA.
+              </p>
+              <ul className="space-y-2.5 text-sm text-muted">
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-px">-</span>
+                  Everything in Managed
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-px">-</span>
+                  Multi-user RBAC access
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-accent mt-px">-</span>
+                  Weekly strategy calls + SLA
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/pricing"
+              className="text-sm text-accent hover:text-accent-hover transition-colors duration-200 font-medium"
+            >
+              Full pricing details &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="contact" className="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Meet Your AI Chief of Staff?</h2>
-        <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-          We are onboarding a limited number of pilot customers. If you are a solo founder,
-          consultant, or small business owner who wants an AI that actually knows your business -
-          let us talk.
-        </p>
-        <a href="mailto:anouar@steelmotionllc.ai" className="inline-block px-8 py-4 bg-[#FF3B30] text-white font-semibold rounded-lg hover:bg-[#E0352B] transition">
-          Get in Touch
-        </a>
-        <p className="text-gray-500 text-sm mt-4">anouar@steelmotionllc.ai</p>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-gray-800 py-8 px-6">
-        <div className="max-w-6xl mx-auto flex items-center justify-between text-sm text-gray-500">
-          <p>CommandPost by Steel Motion LLC - Veteran-owned. Dallas, TX.</p>
-          <p>All rights reserved.</p>
-        </div>
-      </footer>
+      {/* Final CTA */}
+      <CTA
+        headline="Ready to meet your AI Chief of Staff?"
+        subtext="We are onboarding a limited number of pilot customers. Solo founders, consultants, and small business owners who want an AI that actually knows their business."
+        buttonText="Request early access"
+        buttonHref="mailto:anouar@steelmotionllc.ai"
+      />
     </div>
   );
 }

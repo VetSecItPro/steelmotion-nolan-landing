@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,11 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CommandPost - AI Chief of Staff for Your Business",
-  description: "A managed AI employee that runs on your own server, manages your tasks, processes your meetings, and sends you a briefing every morning. Veteran-owned. Security-first.",
+  title: {
+    default: "CommandPost - AI Chief of Staff for your business",
+    template: "%s | CommandPost",
+  },
+  description:
+    "A managed AI employee that runs on your own server, manages your tasks, processes your meetings, and sends you a briefing every morning. Veteran-owned. Security-first.",
   openGraph: {
     title: "CommandPost - AI Chief of Staff",
-    description: "Your AI Chief of Staff. Working 24/7. Mission Control dashboard included.",
+    description:
+      "Your AI Chief of Staff. Working 24/7. Mission Control dashboard included.",
     type: "website",
     url: "https://aicommandpost.com",
   },
@@ -36,9 +43,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col bg-background text-foreground">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -12,9 +12,9 @@ const categories = [
   {
     id: "dashboard",
     label: "Dashboard",
-    title: "Mission Control for your business",
+    title: "See everything that matters. Nothing that doesn't.",
     description:
-      "A single pane of glass for everything happening in your business. Not a generic dashboard - a command center built around how you actually work.",
+      "A single command center for your entire business. Not another generic dashboard. Built around how you actually work, so you spend less time looking for information and more time acting on it.",
     features: [
       {
         title: "Daily briefings",
@@ -45,9 +45,9 @@ const categories = [
   {
     id: "knowledge",
     label: "Knowledge",
-    title: "A second brain that actually works",
+    title: "Your business learns even when you are not paying attention.",
     description:
-      "Every piece of research, every meeting insight, every decision - automatically organized using a PARA + Zettelkasten hybrid. Cross-referenced, surfaced when relevant, and searchable.",
+      "Every piece of research, every meeting insight, every decision - automatically organized and cross-referenced. Surfaced when relevant, searchable when needed.",
     features: [
       {
         title: "Vault architecture",
@@ -78,9 +78,9 @@ const categories = [
   {
     id: "chief-of-staff",
     label: "AI Chief of Staff",
-    title: "Works while you sleep",
+    title: "An employee who anticipates what you need before you ask.",
     description:
-      "Not a chatbot that waits for prompts. An autonomous agent running background jobs, processing your inbox, tracking your commitments, and keeping your business running.",
+      "Not a chatbot that waits for prompts. An autonomous agent running background jobs, processing your inbox, tracking your commitments, and keeping your business moving forward.",
     features: [
       {
         title: "Meeting continuity",
@@ -111,9 +111,9 @@ const categories = [
   {
     id: "security",
     label: "Security",
-    title: "Seven layers of defense",
+    title: "Built to the same standards as financial institutions.",
     description:
-      "Built by a CISSP-certified cybersecurity veteran. Security is not a feature - it is the foundation every other feature is built on.",
+      "Security is not a feature here. It is the foundation every other feature is built on. Seven layers of defense, each independently hardened.",
     features: [
       {
         title: "Isolated infrastructure",
@@ -144,9 +144,9 @@ const categories = [
   {
     id: "integrations",
     label: "Integrations",
-    title: "Connects to your existing stack",
+    title: "Works with your existing tools, not against them.",
     description:
-      "Not a walled garden. Webhooks push data to Slack, Notion, or any custom URL. Calendar, transcript, and search integrations work out of the box.",
+      "Webhooks push data to Slack, Notion, or any custom URL. Calendar, transcript, and search integrations work out of the box. No walled garden.",
     features: [
       {
         title: "Messaging channels",
@@ -190,9 +190,9 @@ export default function FeaturesPage() {
               Everything your CoS does
             </h1>
             <p className="text-lg text-muted leading-relaxed max-w-2xl">
-              66 library modules. 170+ API routes. 168 components. 21 dashboard
-              pages. 606 tests. This is not a prototype - it is a production
-              system built to run your business.
+              A production system with 170+ API routes, 168 components, and 606
+              passing tests. Not a prototype. Built to run your business from
+              day one.
             </p>
           </div>
         </div>
@@ -237,7 +237,7 @@ export default function FeaturesPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {category.features.map((feature) => (
                 <div
                   key={feature.title}
@@ -270,7 +270,7 @@ export default function FeaturesPage() {
       <CTA
         headline="Ready to see it in action?"
         subtext="Request a walkthrough of the Mission Control dashboard and see how your AI Chief of Staff would work for your business."
-        buttonText="Request early access"
+        buttonText="Start your pilot"
         buttonHref="mailto:anouar@steelmotionllc.ai"
       />
     </div>

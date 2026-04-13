@@ -4,7 +4,7 @@ import CTA from "../components/CTA";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Steel Motion LLC. Founded by a CISSP veteran with 20 years military and 20 years cybersecurity experience. Building the AI Chief of Staff for serious businesses.",
+    "Steel Motion LLC. The story behind CommandPost and why we built an AI Chief of Staff that runs on your server.",
 };
 
 export default function AboutPage() {
@@ -18,12 +18,12 @@ export default function AboutPage() {
               About
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mt-3 mb-6">
-              Built by someone who takes security personally
+              I spent 20 years protecting systems. Now I build ones that protect your time.
             </h1>
             <p className="text-lg text-muted leading-relaxed max-w-2xl">
               CommandPost is a product of Steel Motion LLC, founded in Dallas, TX
-              by a cybersecurity veteran who spent two decades protecting systems
-              before building one.
+              by someone who saw a gap between what AI promises and what it
+              actually delivers for business owners.
             </p>
           </div>
         </div>
@@ -43,9 +43,6 @@ export default function AboutPage() {
                       Anouar Jamali
                     </p>
                     <p className="text-sm text-muted">
-                      CISSP, MBA
-                    </p>
-                    <p className="text-xs text-muted mt-1">
                       Founder, Steel Motion LLC
                     </p>
                   </div>
@@ -56,20 +53,20 @@ export default function AboutPage() {
             {/* Right: story */}
             <div>
               <h2 className="text-3xl font-bold tracking-tight mb-8">
-                The founder
+                The story
               </h2>
               <div className="space-y-5 text-muted leading-relaxed">
                 <p>
-                  20 years in the military. 20 years in cybersecurity. An MBA.
-                  CISSP certified. The kind of background where you learn that
-                  systems either work reliably or people get hurt.
+                  Two decades of military service. Two decades in cybersecurity.
+                  The kind of background where you learn that systems either work
+                  reliably or people get hurt. That discipline shows in every
+                  layer of CommandPost.
                 </p>
                 <p>
-                  That discipline shows in every layer of CommandPost. When we
-                  say your data is isolated, we mean per-customer Docker bridge
-                  networks with dropped capabilities and read-only filesystems.
-                  When we say encrypted, we mean AES-256 with Restic to
-                  Backblaze B2 on automated schedules.
+                  When we say your data is isolated, we mean per-customer Docker
+                  bridge networks with dropped capabilities and read-only
+                  filesystems. When we say encrypted, we mean AES-256 with Restic
+                  to Backblaze B2 on automated schedules.
                 </p>
                 <p>
                   The idea for CommandPost came from a simple observation: AI
@@ -141,9 +138,9 @@ export default function AboutPage() {
                 <p className="text-muted leading-relaxed">
                   CommandPost gives every business owner an AI Chief of Staff
                   that runs on their own server. It works 24/7. It accumulates
-                  knowledge. It runs on infrastructure hardened by a
-                  cybersecurity veteran. And it costs less than a part-time
-                  contractor.
+                  knowledge. It runs on infrastructure built to financial
+                  institution security standards. And it costs less than a
+                  part-time contractor.
                 </p>
               </div>
             </div>
@@ -175,7 +172,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
-                  CISSP certified founder
+                  Enterprise-grade security
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
@@ -212,8 +209,8 @@ export default function AboutPage() {
 
       <CTA
         headline="Ready to meet your AI Chief of Staff?"
-        subtext="We are onboarding a limited number of pilot customers. Let us show you what CommandPost can do for your business."
-        buttonText="Get in touch"
+        subtext="We are onboarding a limited number of pilot customers. 30 days to prove the value, or we make it right."
+        buttonText="Start your pilot"
         buttonHref="mailto:anouar@steelmotionllc.ai"
       />
     </div>

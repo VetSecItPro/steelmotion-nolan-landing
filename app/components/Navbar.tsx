@@ -57,7 +57,7 @@ export default function Navbar() {
               href="/pricing"
               className="px-5 py-2 bg-accent text-white text-sm font-medium rounded-lg hover:bg-accent-hover transition-colors duration-200"
             >
-              Get early access
+              Start your pilot
             </Link>
           </div>
 
@@ -111,7 +111,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="block mt-3 px-5 py-2.5 bg-accent text-white text-sm font-medium rounded-lg text-center hover:bg-accent-hover transition-colors"
             >
-              Get early access
+              Start your pilot
             </Link>
           </div>
         </div>

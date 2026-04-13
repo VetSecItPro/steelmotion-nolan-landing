@@ -5,7 +5,7 @@ import CTA from "../components/CTA";
 export const metadata: Metadata = {
   title: "Security",
   description:
-    "Seven layers of defense. Built by a CISSP-certified cybersecurity veteran. Your data never leaves your server.",
+    "Seven layers of defense. Your data runs on your server, not ours. Enterprise-grade security architecture.",
 };
 
 const layers = [
@@ -105,12 +105,12 @@ export default function SecurityPage() {
               Security
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mt-3 mb-6">
-              Seven layers of defense
+              Your competitors store your data on their servers. We don't.
             </h1>
             <p className="text-lg text-muted leading-relaxed max-w-2xl">
-              Built by a CISSP-certified cybersecurity veteran with 20 years of
-              experience protecting systems. Security is the foundation, not an
-              add-on.
+              Every CommandPost instance runs on your own isolated server. Seven
+              layers of defense, each independently hardened. Built to the same
+              standards as financial institutions.
             </p>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default function SecurityPage() {
                 </span>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
                   {
                     name: "Mission Control",
@@ -258,13 +258,13 @@ export default function SecurityPage() {
                 ))}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border flex flex-wrap gap-4 text-xs text-muted">
+              <div className="mt-6 pt-4 border-t border-border flex flex-col sm:flex-row flex-wrap gap-4 text-xs text-muted">
                 <span>Isolated bridge network</span>
-                <span className="text-border">|</span>
+                <span className="hidden sm:block text-border">|</span>
                 <span>Encrypted volumes</span>
-                <span className="text-border">|</span>
+                <span className="hidden sm:block text-border">|</span>
                 <span>Seccomp + AppArmor</span>
-                <span className="text-border">|</span>
+                <span className="hidden sm:block text-border">|</span>
                 <span>Resource limits enforced</span>
               </div>
             </div>
@@ -284,12 +284,12 @@ export default function SecurityPage() {
             </h2>
             <p className="text-muted text-lg leading-relaxed">
               Full data portability, transparent retention policies, and
-              role-based access control. We built CommandPost for the kind of
-              customers who read the security page.
+              role-based access control. Built for the kind of customers who
+              read the security page.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
             {compliance.map((item) => (
               <div
                 key={item.title}
@@ -307,19 +307,18 @@ export default function SecurityPage() {
         </div>
       </section>
 
-      {/* Founder credential */}
+      {/* Founder credential - reframed as quote */}
       <section className="py-16 border-y border-border">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg text-muted leading-relaxed">
-              &ldquo;I spent 20 years in the military and 20 years in
-              cybersecurity before building this product. Every architectural
-              decision reflects that experience. Your data deserves the same
-              level of protection I gave to the systems I spent my career
-              defending.&rdquo;
+              &ldquo;I spent two decades protecting systems before building this
+              product. Every architectural decision reflects that experience.
+              Your data deserves the same level of protection I gave to the
+              systems I spent my career defending.&rdquo;
             </p>
             <p className="mt-4 text-sm text-muted">
-              Anouar Jamali, CISSP - Founder, Steel Motion LLC
+              Anouar Jamali - Founder, Steel Motion LLC
             </p>
           </div>
         </div>

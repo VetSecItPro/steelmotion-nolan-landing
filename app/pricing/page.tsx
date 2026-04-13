@@ -96,7 +96,7 @@ const faqs = [
   },
   {
     q: "Is my data safe?",
-    a: "Your data runs on your own isolated server. It never touches our systems or any LLM provider for storage. Encrypted backups, Cloudflare Zero Trust SSO, and infrastructure hardened by a CISSP-certified cybersecurity veteran.",
+    a: "Your data runs on your own isolated server. It never touches our systems or any LLM provider for storage. Encrypted backups, Cloudflare Zero Trust SSO, and seven layers of enterprise-grade security.",
   },
   {
     q: "What if I want to leave?",
@@ -161,11 +161,11 @@ export default function PricingPage() {
       {/* Pricing cards */}
       <section className="pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`rounded-2xl p-8 card-lift ${
+                className={`rounded-2xl p-6 sm:p-8 card-lift ${
                   tier.highlight
                     ? "border border-accent/40 bg-surface-1 glow-accent relative"
                     : "border border-border bg-surface-1"
@@ -282,7 +282,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14">
             {[
-              "CISSP certified",
+              "Enterprise-grade security",
               "Veteran-owned",
               "GDPR compliant",
               "SOC 2 in progress",
@@ -307,7 +307,7 @@ export default function PricingPage() {
             Frequently asked questions
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 max-w-5xl mx-auto">
             {faqs.map((faq) => (
               <div key={faq.q}>
                 <h3 className="font-semibold text-foreground mb-2">
@@ -323,7 +323,7 @@ export default function PricingPage() {
       <CTA
         headline="Start your 30-day pilot"
         subtext="Full Managed tier access. If it does not deliver value within 30 days, we will make it right."
-        buttonText="Request early access"
+        buttonText="Start your pilot"
         buttonHref="mailto:anouar@steelmotionllc.ai"
       />
     </div>

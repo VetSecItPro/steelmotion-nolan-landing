@@ -1,42 +1,57 @@
 "use client";
 
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/motion/stagger-text";
 
 export default function AboutHero() {
   return (
-    <section className="pt-28 pb-16 lg:pt-36 lg:pb-20 relative overflow-hidden min-h-[450px] flex items-center">
-      <BackgroundBeams className="opacity-30" />
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto" style={{ textAlign: "center" }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+    <section className="relative overflow-hidden" style={{ paddingTop: "8rem", paddingBottom: "3rem" }}>
+      <div
+        className="pointer-events-none"
+        style={{
+          position: "absolute", top: "-50px", left: "50%",
+          transform: "translateX(-50%)",
+          width: "800px", height: "400px",
+          background: "radial-gradient(ellipse, rgba(217,119,6,0.08) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+        <FadeIn>
+          <p className="eyebrow" style={{ display: "block" }}>About</p>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h1
+            className="font-heading text-foreground"
+            style={{
+              fontSize: "clamp(2.25rem, 5vw, 4rem)",
+              fontWeight: 700,
+              letterSpacing: "-0.035em",
+              lineHeight: 1.08,
+              marginTop: "1rem",
+              marginBottom: "1.5rem",
+            }}
           >
-            <span className="eyebrow" style={{ display: "block", textAlign: "center" }}>About</span>
-          </motion.div>
-          <motion.h1
-            className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mt-4 mb-6"
-            style={{ textAlign: "center" }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            I spent 20 years protecting systems. Now I build ones that protect your time.
-          </motion.h1>
-          <motion.p
-            className="text-lg text-muted leading-relaxed max-w-2xl mx-auto"
-            style={{ textAlign: "center" }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
+            I spent 20 years protecting systems.{" "}
+            <span className="serif-accent" style={{ color: "var(--color-accent)" }}>
+              Now I build ones that protect your time.
+            </span>
+          </h1>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p
+            style={{
+              fontSize: "clamp(1rem, 1.75vw, 1.15rem)",
+              lineHeight: 1.7,
+              color: "var(--color-muted)",
+              maxWidth: "36rem",
+              margin: "0 auto",
+            }}
           >
             CommandPost is a product of Steel Motion LLC, founded in Dallas, TX
             by someone who saw a gap between what AI promises and what it
             actually delivers for business owners.
-          </motion.p>
-        </div>
+          </p>
+        </FadeIn>
       </div>
     </section>
   );

@@ -1,26 +1,58 @@
 "use client";
 
-import { Spotlight } from "@/components/ui/spotlight-new";
+import { FadeIn } from "@/components/motion/stagger-text";
 
 export default function PricingHero() {
   return (
-    <section className="pt-36 pb-16 lg:pt-44 lg:pb-20 relative overflow-hidden">
-      <Spotlight
-        gradientFirst="radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(0, 100%, 60%, .06) 0, hsla(0, 100%, 45%, .02) 50%, hsla(0, 100%, 35%, 0) 80%)"
-        gradientSecond="radial-gradient(50% 50% at 50% 50%, hsla(0, 100%, 60%, .04) 0, hsla(0, 100%, 45%, .02) 80%, transparent 100%)"
-        gradientThird="radial-gradient(50% 50% at 50% 50%, hsla(0, 100%, 60%, .03) 0, hsla(0, 100%, 35%, .01) 80%, transparent 100%)"
-        duration={8}
+    <section className="relative overflow-hidden" style={{ paddingTop: "8rem", paddingBottom: "3rem" }}>
+      <div
+        className="pointer-events-none"
+        style={{
+          position: "absolute", top: "-50px", left: "50%",
+          transform: "translateX(-50%)",
+          width: "800px", height: "400px",
+          background: "radial-gradient(ellipse, rgba(217,119,6,0.08) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
       />
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center" style={{ textAlign: "center" }}>
-        <span className="eyebrow" style={{ display: "block", textAlign: "center" }}>Pricing</span>
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mt-4 mb-6" style={{ textAlign: "center" }}>
-          Transparent pricing
-        </h1>
-        <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto" style={{ textAlign: "center" }}>
-          No hidden fees. No per-token charges. One price that covers
-          infrastructure, LLM costs, and management. Pick the tier that fits
-          how you work.
-        </p>
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+        <FadeIn>
+          <p className="eyebrow" style={{ display: "block" }}>Pricing</p>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h1
+            className="font-heading text-foreground"
+            style={{
+              fontSize: "clamp(2.25rem, 5vw, 4rem)",
+              fontWeight: 700,
+              letterSpacing: "-0.035em",
+              lineHeight: 1.08,
+              marginTop: "1rem",
+              marginBottom: "1.5rem",
+            }}
+          >
+            An executive assistant costs $80K.{" "}
+            <br className="hidden md:block" />
+            <span className="serif-accent" style={{ color: "var(--color-accent)" }}>
+              This costs less than your coffee budget.
+            </span>
+          </h1>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p
+            style={{
+              fontSize: "clamp(1rem, 1.75vw, 1.15rem)",
+              lineHeight: 1.7,
+              color: "var(--color-muted)",
+              maxWidth: "36rem",
+              margin: "0 auto",
+            }}
+          >
+            No hidden fees. No per-token charges. One price that covers
+            infrastructure, LLM costs, and management. Pick the tier that fits
+            how you work.
+          </p>
+        </FadeIn>
       </div>
     </section>
   );

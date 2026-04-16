@@ -38,7 +38,7 @@ export default function SecurityPage() {
               systems I spent my career defending.&rdquo;
             </blockquote>
             <p className="text-sm text-muted" style={{ textAlign: "center" }}>
-              Anouar Jamali - Founder, Steel Motion LLC
+              Anouar Bencheqroun, Founder, Steel Motion LLC
             </p>
           </AnimateOnScroll>
         </div>

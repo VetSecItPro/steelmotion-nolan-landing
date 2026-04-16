@@ -28,17 +28,40 @@ export default function SecurityPage() {
       <ComplianceSection />
 
       {/* Founder credential quote */}
-      <section className="py-20 border-y border-border">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimateOnScroll className="max-w-3xl mx-auto text-center" style={{ textAlign: "center" }}>
-            <blockquote className="font-serif text-xl lg:text-2xl italic text-foreground/80 leading-[1.5] mb-6" style={{ textAlign: "center" }}>
-              &ldquo;I spent two decades protecting systems before building this
-              product. Every architectural decision reflects that experience.
-              Your data deserves the same level of protection I gave to the
-              systems I spent my career defending.&rdquo;
+      <section className="py-12 lg:py-16" style={{ borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <AnimateOnScroll className="text-center" style={{ textAlign: "center" }}>
+            <blockquote
+              className="font-serif"
+              style={{
+                fontSize: "clamp(1.1rem, 2.2vw, 1.5rem)",
+                fontStyle: "italic",
+                color: "var(--color-foreground)",
+                opacity: 0.9,
+                lineHeight: 1.6,
+                marginBottom: "1.5rem",
+                letterSpacing: "0.01em",
+                wordSpacing: "0.05em",
+                textAlign: "center",
+              }}
+            >
+              &ldquo;I spent two decades protecting systems before building
+              this product. Every architectural decision reflects that
+              experience. Your data deserves the same level of protection I
+              gave to the systems I spent my career defending.&rdquo;
             </blockquote>
-            <p className="text-sm text-muted" style={{ textAlign: "center" }}>
-              Anouar Jamali - Founder, Steel Motion LLC
+            <p
+              className="font-heading"
+              style={{
+                fontWeight: 600,
+                color: "var(--color-foreground)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Anouar Bencheqroun
+            </p>
+            <p style={{ fontSize: "0.85rem", color: "var(--color-muted)", marginTop: "0.25rem" }}>
+              Founder, Steel Motion LLC
             </p>
           </AnimateOnScroll>
         </div>

@@ -1,28 +1,48 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { LampContainer } from "@/components/ui/lamp";
 
 export default function SecurityHero() {
   return (
-    <LampContainer className="min-h-[550px] lg:min-h-[600px] bg-background rounded-none">
+    <LampContainer
+      className="!min-h-[520px] lg:!min-h-[560px] rounded-none"
+      contentClassName="!-translate-y-24"
+    >
       <motion.div
-        initial={{ opacity: 0.5, y: 100 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="text-center max-w-3xl mx-auto pt-28 lg:pt-36"
+        transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center max-w-3xl mx-auto"
         style={{ textAlign: "center" }}
       >
-        <span className="eyebrow" style={{ display: "block", textAlign: "center" }}>Security</span>
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mt-4 mb-6 bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent" style={{ textAlign: "center" }}>
-          Your competitors store your data on their servers. We don&apos;t.
+        <h1
+          className="font-heading text-foreground mb-5"
+          style={{
+            fontSize: "clamp(2rem, 4.5vw, 3.5rem)",
+            fontWeight: 700,
+            letterSpacing: "-0.035em",
+            lineHeight: 1.1,
+            textAlign: "center",
+          }}
+        >
+          Your data doesn&apos;t leave{" "}
+          <span className="serif-accent" style={{ color: "var(--color-accent)" }}>
+            your environment.
+          </span>
         </h1>
-        <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto" style={{ textAlign: "center" }}>
-          Every CommandPost instance runs on your own isolated server. Seven
+
+        <p
+          style={{
+            fontSize: "clamp(1rem, 1.75vw, 1.15rem)",
+            lineHeight: 1.7,
+            color: "var(--color-muted)",
+            maxWidth: "36rem",
+            margin: "0 auto",
+            textAlign: "center",
+          }}
+        >
+          Every CommandPost instance runs in your own isolated container. Seven
           layers of defense, each independently hardened. Built to the same
           standards as financial institutions.
         </p>

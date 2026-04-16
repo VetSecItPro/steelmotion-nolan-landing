@@ -1,55 +1,55 @@
 export const painPoints = [
-  "Start every morning scrambling through emails, calendar, and Slack",
-  "Forget follow-ups until it is too late",
-  "Walk into meetings unprepared",
-  "Lose track of decisions and commitments",
+  "Juggling disconnected SaaS tools and losing critical business context",
+  "Spending your morning reacting to emails instead of doing deep work",
+  "Forgetting vital follow-ups and scrambling right before client meetings",
+  "Trusting sensitive company data to public AI scraping models",
 ];
 
 export const gains = [
-  "Morning briefing waiting for you at 7 AM with everything you need",
-  "Every commitment tracked, every follow-up surfaced automatically",
-  "Pre-meeting context with attendee history and open items",
-  "Decision journal with 90-day outcome tracking",
+  "Air-gapped, sovereign AI processing powered by OpenClaw architecture",
+  "A unified Second Brain that tracks decisions and surfaces commitments autonomously",
+  "Predictive morning briefings detailing your day, isolated entirely on your server",
+  "A 24/7 proactive AI Agent that anticipates needs and structures your pipeline",
 ];
 
 export const steps = [
   {
     num: "01",
-    title: "We learn your business",
-    desc: "A 30-minute call to map your workflows, tools, and goals.",
+    title: "Deploy OpenClaw Securely",
+    desc: "Your zero-trust, isolated AI container spins up on dedicated infrastructure. Experience complete data sovereignty.",
   },
   {
     num: "02",
-    title: "We build your CoS",
-    desc: "Your AI gets deployed on your own server, configured for your business, connected to your tools. Done in days.",
+    title: "Connect Your Context",
+    desc: "Seamlessly integrate your calendars, communications, and notes. The OpenClaw engine cleans, sorts, and indexes it all for your Agent.",
   },
   {
     num: "03",
-    title: "You run your business",
-    desc: "Morning briefings, meeting prep, task tracking, knowledge management. All running while you focus on growth.",
+    title: "Reclaim Your Autonomy",
+    desc: "CommandPost runs in the background 24/7. Generating briefings, capturing decisions, and organizing knowledge while you focus on growth.",
   },
 ];
 
 export const features = [
   {
-    title: "Morning briefings",
-    desc: "Calendar, priorities, stale contacts, vault insights. Every day at 7 AM.",
+    title: "Predictive Autonomous Briefings",
+    desc: "Calendar, priorities, stale contacts, vault insights. Delivered to you securely every day at 7 AM.",
   },
   {
-    title: "Second brain",
-    desc: "Every meeting, decision, and insight organized automatically. Searchable forever.",
+    title: "Air-Gapped Second Brain",
+    desc: "Every meeting, decision, and insight organized automatically in an airtight Docker environment. Searchable forever.",
   },
   {
-    title: "Meeting continuity",
-    desc: "Walk in prepared. Walk out with action items tracked.",
+    title: "Meeting Continuity Engine",
+    desc: "Walk in prepared natively. Walk out with action items tracked and automatically routed to your pipeline.",
   },
   {
-    title: "Business pulse",
-    desc: "Weekly 0-100 health score. Know exactly where to focus.",
+    title: "Health Pulse Telemetry",
+    desc: "A weekly 0-100 business health score calculated locally. Know exactly where to focus your attention safely.",
   },
   {
-    title: "Custom dashboard",
-    desc: "Your command center. Tasks, pipeline, content, contacts, goals - all connected.",
+    title: "Mission Control Dashboard",
+    desc: "Your AI command center. Tasks, pipeline, content, contacts, and goals - fully connected through the OpenClaw API.",
   },
 ];
 

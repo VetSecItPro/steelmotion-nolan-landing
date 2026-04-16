@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import type { ReactNode, CSSProperties } from "react";
 
 interface AnimateOnScrollProps {
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
   delay?: number;
   direction?: "up" | "down" | "left" | "right";
 }
@@ -13,6 +14,7 @@ interface AnimateOnScrollProps {
 export default function AnimateOnScroll({
   children,
   className = "",
+  style,
   delay = 0,
   direction = "up",
 }: AnimateOnScrollProps) {
@@ -28,6 +30,7 @@ export default function AnimateOnScroll({
   return (
     <motion.div
       className={className}
+      style={style}
       initial={{ opacity: 0, ...offset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}

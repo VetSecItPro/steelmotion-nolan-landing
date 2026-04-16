@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
+import { Space_Grotesk, DM_Sans, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -21,30 +28,24 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
 export const metadata: Metadata = {
   title: {
-    default: "CommandPost - AI Chief of Staff for your business",
+    default: "CommandPost - AI Chief of Staff for Your Business",
     template: "%s | CommandPost",
   },
   description:
-    "A managed AI employee that runs on your own server, manages your tasks, processes your meetings, and sends you a briefing every morning. Veteran-owned. Security-first.",
+    "Your AI-powered business operations center. Morning briefings, meeting prep, decision tracking, and a second brain that compounds - running 24/7 in your own isolated environment.",
   openGraph: {
     title: "CommandPost - AI Chief of Staff",
     description:
-      "Your AI Chief of Staff. Working 24/7. Mission Control dashboard included.",
+      "Morning briefings before coffee. Meetings prepped automatically. Every decision logged. Your AI Chief of Staff, running 24/7.",
     type: "website",
     url: "https://aicommandpost.com",
   },
   twitter: {
     card: "summary_large_image",
     title: "CommandPost - AI Chief of Staff",
-    description: "Your AI Chief of Staff. Working 24/7.",
+    description: "Morning briefings before coffee. Meetings prepped automatically. Every decision logged.",
   },
 };
 
@@ -56,11 +57,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${jakarta.variable} antialiased`}
+      className={`${spaceGrotesk.variable} ${dmSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-background text-foreground">
+      <body className="min-h-screen flex flex-col bg-background text-foreground font-body">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

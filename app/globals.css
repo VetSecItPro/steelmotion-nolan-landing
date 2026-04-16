@@ -5,19 +5,27 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: #0C0C0C;
-  --color-foreground: #E8E8ED;
-  --color-accent: #FF3B30;
-  --color-accent-hover: #E0352B;
-  --color-surface-1: #121218;
-  --color-surface-2: #1A1A22;
-  --color-surface-3: #252530;
+  /* === CommandPost 2026 Palette: Dark + Warm Amber/Gold + Red CTA === */
+  --color-background: #09090B;
+  --color-foreground: #EAEAEF;
+  --color-accent: #D97706;
+  --color-accent-hover: #B45309;
+  --color-accent-subtle: rgba(217, 119, 6, 0.12);
+  --color-cta: #EF4444;
+  --color-cta-hover: #DC2626;
+  --color-cta-glow: rgba(239, 68, 68, 0.2);
+  --color-surface-1: #0F0F14;
+  --color-surface-2: #161620;
+  --color-surface-3: #1E1E2A;
   --color-muted: #6B6B7B;
-  --color-border: #2A2A35;
-  --color-border-hover: #3A3A48;
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --color-border: #1F1F2E;
+  --color-border-hover: #2E2E40;
+  --color-gold-gradient-start: #D97706;
+  --color-gold-gradient-end: #F59E0B;
+  /* === Typography === */
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-heading);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -53,47 +61,63 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Typography utility classes for luxury mixed fonts */
+/* ========================================
+   Typography system — Space Grotesk (headings) + DM Sans (body) + Instrument Serif (accent)
+   ======================================== */
+.font-heading { font-family: var(--font-heading), system-ui, sans-serif; }
+.font-body { font-family: var(--font-body), system-ui, sans-serif; }
 .font-serif { font-family: var(--font-serif), "Georgia", serif; }
-.font-display { font-family: var(--font-display), var(--font-geist-sans), sans-serif; }
+.font-mono { font-family: var(--font-mono), monospace; }
 
-/* Italic serif for accent words - the luxury touch */
 .serif-accent {
   font-family: var(--font-serif), "Georgia", serif;
   font-style: italic;
   font-weight: 400;
+  letter-spacing: 0.025em;
+  word-spacing: 0.1em;
 }
 
-/* Eyebrow labels - wide tracking, uppercase, small */
+.font-serif {
+  letter-spacing: 0.015em;
+  word-spacing: 0.08em;
+}
+
+/* Scroll offset for anchor-linked sections.
+   Main navbar ~65px + sticky feature sub-nav ~57px = ~122px total overhead.
+   Using 8.5rem (136px) for breathing room. Scoped to section[id] to avoid
+   affecting unrelated id'd elements. */
+section[id], [data-scroll-anchor] {
+  scroll-margin-top: 8.5rem;
+}
+
 .eyebrow {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 0.6875rem;
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-accent);
 }
 
-/* Stat numbers - mono, tabular */
 .stat-number {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), monospace;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
 }
 
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Gold text gradient for premium headlines */
+.text-gold {
+  background: linear-gradient(135deg, var(--color-gold-gradient-start), var(--color-gold-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
+/* Base reset handled by @layer base below */
 
 /* Glassmorphic nav background */
 .nav-glass {
@@ -103,9 +127,23 @@ body {
   border-bottom: 1px solid rgba(42, 42, 53, 0.5);
 }
 
-/* Subtle glow effect for CTAs */
+/* Subtle glow for amber accent elements */
 .glow-accent {
-  box-shadow: 0 0 40px rgba(255, 59, 48, 0.15), 0 0 80px rgba(255, 59, 48, 0.05);
+  box-shadow: 0 0 40px rgba(217, 119, 6, 0.12), 0 0 80px rgba(217, 119, 6, 0.04);
+}
+
+/* Bold glow for red CTA buttons */
+.glow-cta {
+  box-shadow: 0 0 30px var(--color-cta-glow), 0 0 60px rgba(239, 68, 68, 0.08);
+}
+
+/* Pulsing CTA glow animation */
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 0 20px var(--color-cta-glow), 0 0 40px rgba(239, 68, 68, 0.06); }
+  50% { box-shadow: 0 0 30px var(--color-cta-glow), 0 0 60px rgba(239, 68, 68, 0.12); }
+}
+.glow-cta-pulse {
+  animation: cta-pulse 3s ease-in-out infinite;
 }
 
 /* Gradient orb animation */
@@ -166,8 +204,12 @@ body {
   50% { background-position: 100% 50%; }
 }
 .mesh-bg {
-  background: linear-gradient(135deg, #0C0C0C 0%, #1a0a0a 25%, #0C0C0C 50%, #0a0a1a 75%, #0C0C0C 100%);
-  background-size: 400% 400%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(217, 119, 6, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(239, 68, 68, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(217, 119, 6, 0.03) 0%, transparent 50%),
+    #09090B;
+  background-size: 200% 200%;
   animation: mesh-shift 20s ease infinite;
 }
 
@@ -203,10 +245,89 @@ body {
    Counter animation for stats
    ======================================== */
 .stat-highlight {
-  background: linear-gradient(135deg, #FF3B30, #FF6B5B);
+  background: linear-gradient(135deg, var(--color-gold-gradient-start), var(--color-gold-gradient-end));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ========================================
+   Premium animated gradient mesh for hero
+   ======================================== */
+@keyframes gradient-mesh-hero {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 50% 0%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 25% 30%, rgba(217, 119, 6, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 75% 60%, rgba(239, 68, 68, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 800px 300px at 50% 90%, rgba(217, 119, 6, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 600px at 10% 80%, rgba(99, 102, 241, 0.03) 0%, transparent 70%);
+  background-size: 200% 200%;
+  animation: gradient-mesh-hero 25s ease infinite;
+  pointer-events: none;
+}
+
+/* Noise texture overlay for depth */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Glass card for premium containers */
+.glass-card {
+  background: rgba(15, 15, 20, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.glass-card:hover {
+  border-color: rgba(217, 119, 6, 0.3);
+  box-shadow: 0 0 40px rgba(217, 119, 6, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Footer links — CSS-only hover (server component safe) */
+.footer-link {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  transition: color 0.2s ease;
+}
+.footer-link:hover {
+  color: var(--color-foreground);
+}
+
+/* Nav links */
+.nav-link {
+  color: var(--color-muted);
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: var(--color-foreground);
+}
+
+/* Feature category tabs — pill-style, hover reveals amber accent */
+.feature-tab {
+  cursor: pointer;
+}
+.feature-tab:hover {
+  color: var(--color-foreground) !important;
+  border-color: var(--color-accent) !important;
+  background: rgba(217, 119, 6, 0.06) !important;
+  transform: translateY(-1px);
 }
 
 /* ========================================

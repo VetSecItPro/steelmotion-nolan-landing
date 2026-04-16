@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import FeaturesHero from "../components/features/FeaturesHero";
+import FeatureCategory from "../components/features/FeatureCategory";
+import FeatureTabs from "../components/features/FeatureTabs";
 import CTA from "../components/CTA";
 
 export const metadata: Metadata = {
@@ -179,92 +181,29 @@ const categories = [
 export default function FeaturesPage() {
   return (
     <div className="bg-background">
-      {/* Hero */}
-      <section className="pt-28 pb-16 lg:pt-36 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="text-xs font-mono text-accent tracking-wider uppercase">
-              Features
-            </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mt-3 mb-6">
-              Everything your CoS does
-            </h1>
-            <p className="text-lg text-muted leading-relaxed max-w-2xl">
-              A production system with 170+ API routes, 168 components, and 606
-              passing tests. Not a prototype. Built to run your business from
-              day one.
-            </p>
-          </div>
-        </div>
-      </section>
+      <FeaturesHero />
 
-      {/* Category nav */}
-      <section className="border-b border-border sticky top-16 z-40 bg-background/80 backdrop-blur-lg">
+      {/* Category nav — tab-style pills */}
+      <section
+        className="sticky top-16 z-40"
+        style={{
+          background: "rgba(9, 9, 11, 0.75)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          borderBottom: "1px solid var(--color-border)",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex gap-6 overflow-x-auto py-3 -mb-px">
-            {categories.map((cat) => (
-              <a
-                key={cat.id}
-                href={`#${cat.id}`}
-                className="text-sm text-muted hover:text-foreground whitespace-nowrap transition-colors duration-200 pb-3 border-b border-transparent hover:border-accent"
-              >
-                {cat.label}
-              </a>
-            ))}
-          </div>
+          <FeatureTabs categories={categories.map((c) => ({ id: c.id, label: c.label }))} />
         </div>
       </section>
 
       {/* Feature sections */}
-      {categories.map((category, catIdx) => (
-        <section
-          key={category.id}
-          id={category.id}
-          className={`py-24 lg:py-28 ${
-            catIdx % 2 === 1 ? "bg-surface-1/30" : ""
-          }`}
-        >
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="max-w-2xl mb-14">
-              <span className="text-xs font-mono text-accent tracking-wider uppercase">
-                {category.label}
-              </span>
-              <h2 className="text-3xl font-bold tracking-tight mt-2 mb-4">
-                {category.title}
-              </h2>
-              <p className="text-muted text-lg leading-relaxed">
-                {category.description}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {category.features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="rounded-xl border border-border bg-surface-1/50 p-7 card-lift hover:border-border-hover"
-                >
-                  <h3 className="font-semibold text-foreground mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-muted leading-relaxed">
-                    {feature.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {category.id !== "integrations" && (
-              <div className="mt-8">
-                <Link
-                  href="/pricing"
-                  className="text-sm text-accent hover:text-accent-hover transition-colors duration-200 font-medium"
-                >
-                  See pricing &rarr;
-                </Link>
-              </div>
-            )}
-          </div>
-        </section>
+      {categories.map((category, idx) => (
+        <div key={category.id}>
+          <FeatureCategory category={category} index={idx} />
+          {idx < categories.length - 1 && <hr className="section-divider" />}
+        </div>
       ))}
 
       <CTA

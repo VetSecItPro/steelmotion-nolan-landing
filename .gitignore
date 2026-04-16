@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Playwright test artifacts and design-review screenshots
+.playwright-mcp/
+*.png
+!public/**/*.png
+landing-redesign-plan.md

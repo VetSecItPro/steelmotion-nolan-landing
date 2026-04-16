@@ -28,34 +28,52 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+    <footer style={{ borderTop: "1px solid var(--color-border)", background: "var(--color-background)" }}>
+      <div className="max-w-4xl mx-auto px-6 lg:px-8" style={{ paddingTop: "2rem", paddingBottom: "1.5rem" }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-7 h-7 bg-accent rounded-md flex items-center justify-center font-bold text-xs text-white">
+              <div
+                style={{
+                  width: "1.75rem", height: "1.75rem", borderRadius: "0.375rem",
+                  background: "var(--color-accent)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontWeight: 700, fontSize: "0.7rem", color: "#0A0A0B",
+                }}
+              >
                 CP
               </div>
-              <span className="font-semibold text-foreground">CommandPost</span>
+              <span className="font-heading" style={{ fontWeight: 600, color: "var(--color-foreground)", letterSpacing: "-0.02em" }}>
+                Command<span style={{ color: "var(--color-accent)" }}>Post</span>
+              </span>
             </div>
-            <p className="text-sm text-muted leading-relaxed max-w-xs">
-              Your AI Chief of Staff. Managed infrastructure, enterprise security, institutional memory.
+            <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--color-muted)", maxWidth: "18rem" }}>
+              Your AI Chief of Staff. Dashboard, second brain, and 24/7 operations. All on your infrastructure.
             </p>
           </div>
 
           {/* Link columns */}
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-xs font-medium text-muted uppercase tracking-wider mb-4">
+              <h4
+                className="font-heading"
+                style={{
+                  fontSize: "0.7rem", fontWeight: 600,
+                  color: "var(--color-accent)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  marginBottom: "1rem",
+                }}
+              >
                 {col.title}
               </h4>
-              <ul className="space-y-2.5">
+              <ul style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted hover:text-foreground transition-colors duration-200"
+                      className="footer-link"
                     >
                       {link.label}
                     </Link>
@@ -67,11 +85,17 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-muted">
-            CommandPost by Steel Motion LLC. Veteran-owned. Dallas, TX.
+        <div
+          className="flex flex-col sm:flex-row items-center justify-between gap-3"
+          style={{
+            marginTop: "1.5rem", paddingTop: "1rem",
+            borderTop: "1px solid var(--color-border)",
+          }}
+        >
+          <p style={{ fontSize: "0.75rem", color: "var(--color-muted)" }}>
+            Veteran-owned. Dallas, TX. Built with discipline.
           </p>
-          <p className="text-xs text-muted">
+          <p style={{ fontSize: "0.75rem", color: "var(--color-muted)" }}>
             &copy; {new Date().getFullYear()} Steel Motion LLC. All rights reserved.
           </p>
         </div>

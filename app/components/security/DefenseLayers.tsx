@@ -51,7 +51,7 @@ const layers = [
     name: "Data",
     tech: "AES-256 encrypted backups",
     description:
-      "Restic to Backblaze B2 with AES-256 encryption. Automated daily backups with 7-day, 4-week, and 6-month retention. Self-service restore from the dashboard. Secrets stored in chmod 600 env files.",
+      "Restic to Cloudflare R2 with AES-256 encryption. Automated daily backups with 7-day, 4-week, and 6-month retention. Self-service restore from the dashboard. Secrets stored in chmod 600 env files.",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function DefenseLayers() {
           <AnimateOnScroll delay={600}>
             <div className="rounded-xl border border-accent/20 bg-gradient-to-br from-accent/10 to-transparent p-7 h-full flex items-center justify-center">
               <p className="font-display text-xl font-bold text-center text-foreground/90" style={{ textAlign: "center" }}>
-                Your data never<br />leaves your server.
+                No central database.<br />No shared storage.<br />No harvested data.
               </p>
             </div>
           </AnimateOnScroll>

@@ -26,9 +26,10 @@ export default function SecurityHero() {
             textAlign: "center",
           }}
         >
-          Your data doesn&apos;t leave{" "}
+          Your container, your data.{" "}
+          <br className="hidden md:block" />
           <span className="serif-accent" style={{ color: "var(--color-accent)" }}>
-            your environment.
+            Processed by AI, stored by you.
           </span>
         </h1>
         <p
@@ -41,9 +42,9 @@ export default function SecurityHero() {
             textAlign: "center",
           }}
         >
-          Every CommandPost instance runs in your own isolated container. Seven
-          layers of defense, each independently hardened. Built to the same
-          standards as financial institutions.
+          Every CommandPost lives in its own isolated container. We don&apos;t
+          own your database, your backups, or your memory. The AI processes your
+          requests and hands them right back.
         </p>
       </motion.div>
     </LampContainer>

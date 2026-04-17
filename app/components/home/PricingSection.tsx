@@ -77,22 +77,16 @@ export default function PricingSection() {
         <ScrollRevealGroup className="grid md:grid-cols-3 gap-5 items-stretch" staggerDelay={0.1}>
           {tiers.map((tier) => (
             <ScrollRevealItem key={tier.name}>
-              {tier.prominent ? (
-                <MovingBorderCard
-                  as="div"
-                  borderRadius="1rem"
-                  containerClassName="w-full h-full"
-                  borderClassName="h-20 w-20 bg-[radial-gradient(var(--color-cta)_40%,transparent_60%)] opacity-[0.8]"
-                  className="flex flex-col p-7 lg:p-8 bg-[var(--color-surface-1)] border-[var(--color-border)] text-left w-full"
-                  duration={4000}
-                >
-                  <TierContent tier={tier} />
-                </MovingBorderCard>
-              ) : (
-                <div className="glass-card rounded-2xl p-7 lg:p-8 h-full flex flex-col">
-                  <TierContent tier={tier} />
-                </div>
-              )}
+              <MovingBorderCard
+                as="div"
+                borderRadius="1rem"
+                containerClassName="w-full h-full"
+                borderClassName="h-20 w-20 bg-[radial-gradient(var(--color-cta)_40%,transparent_60%)] opacity-[0.8]"
+                className="flex flex-col p-7 lg:p-8 bg-[var(--color-surface-1)] border-[var(--color-border)] text-left w-full"
+                duration={4000}
+              >
+                <TierContent tier={tier} />
+              </MovingBorderCard>
             </ScrollRevealItem>
           ))}
         </ScrollRevealGroup>

@@ -14,11 +14,11 @@ const compliance = [
   },
   {
     title: "Backup retention",
-    text: "Setup tier: daily backups. Managed tier: every 6 hours. Workforce tier: hourly. All encrypted with AES-256 and stored in Backblaze B2.",
+    text: "Setup tier: daily backups. Managed tier: every 6 hours. Workforce tier: hourly. All encrypted with AES-256 and stored in encrypted offsite storage.",
   },
   {
-    title: "No data sharing",
-    text: "Your data never leaves your server for storage. LLM API calls use your context in transit but nothing is stored by OpenAI, Anthropic, or any provider.",
+    title: "How your data moves",
+    text: "The AI processes your prompts in the moment, then lets them go. Our LLM partner doesn't store them, log them, or train future models on them. Nothing gets harvested, nothing gets shared, nothing gets resold.",
   },
   {
     title: "Access control",
